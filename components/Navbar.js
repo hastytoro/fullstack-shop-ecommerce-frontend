@@ -9,7 +9,6 @@ import User from "./User";
 // The useUser hook gets you the UserProfile object from the server-side session
 // by requesting it from the HandleProfile API Route handler.
 // https://auth0.github.io/nextjs-auth0/modules/frontend_use_user.html
-import { useUser } from "@auth0/nextjs-auth0";
 
 import { useStateContext } from "../lib/context";
 
