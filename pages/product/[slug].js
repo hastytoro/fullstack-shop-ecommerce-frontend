@@ -27,8 +27,8 @@ export default function SlugDetail() {
   });
 
   const { data, fetching, error } = results;
-  if (fetching) toast.loading("Loading...");
-  if (error) toast.error(`This didn't work ${error.message}.`);
+  if (fetching) return <p>Loading...</p>;
+  if (error) return <p>Oh no! {error.message}</p>;
 
   // Extract our data from the graphql backend query:
   const product = data.products.data[0].attributes;
