@@ -6,14 +6,15 @@ import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
 
 import styled from "styled-components";
+import toast from "react-hot-toast";
 
 export default function Home() {
   // Fetch from `strapi` with `urql` and graphql query:
   const [results] = useQuery({ query: PRODUCT_QUERY });
   const { data, fetching, error } = results;
 
-  if (fetching) return <p>Loading...</p>;
-  if (error) return <p>Oh no! {error.message}</p>;
+  if (fetching) toast.loading("Loading...");
+  if (error) toast.error(`This didn't work ${error.message}.`);
 
   const products = data.products.data;
 

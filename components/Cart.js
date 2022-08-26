@@ -46,7 +46,7 @@ export default function Cart() {
       url: "/api/stripe",
       data: cartItems,
     });
-    toast.loading("Waiting...");
+    toast.loading("Loading...");
     await stripePromise.redirectToCheckout({ sessionId: response.data.id });
   };
   // const checkoutHandler = async () => {
